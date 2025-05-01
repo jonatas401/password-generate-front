@@ -1,1 +1,93 @@
-/* You can add global styles to this file, and also import other style files */
+@import "primeicons/primeicons.css";
+
+
+/* Order */
+@layer reset, primeng;
+
+/* Reset CSS */
+@layer reset {
+    button,
+    input {
+
+      body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      .ff-inter { font-family: 'Inter', sans-serif; }
+      .ff-roboto-mono { font-family: 'Roboto Mono', monospace; }
+    }
+  }
+
+html, body { height: 100%; }
+body { margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+
+
+.container{
+  padding-right: 1rem;
+  padding-left: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  height: 100%;
+  justify-content: space-around;
+  display: flex;
+}
+
+.section-start{
+  display: flex;
+  justify-content: start;
+}
+
+
+@media (max-width: 466px) {
+  .justify{
+    display: block !important;
+  }
+
+  .justify-end{
+    display: block !important;
+    position: inherit !important;
+  }
+
+  .margin-top-small{
+    margin-top: 2em;
+  }
+
+}
+
+@media (max-width: 574px) {
+  .container{
+    display: block !important;
+  }
+
+
+}
+.margin-bottom{
+  margin-bottom: 2em;
+}
+
+.margin-top-2em{
+  margin-top: 2em;
+}
+
+.margin-top-1em{
+  margin-top: 2em;
+}
+.margin-bottom-10px{
+  margin-bottom: 10px;
+}
+
+.width-70{
+  width: 70%;
+}
+
+.justify-center{
+  display: flex;
+  justify-content: center;
+}
+.height-70{
+  height: 70%;
+}
