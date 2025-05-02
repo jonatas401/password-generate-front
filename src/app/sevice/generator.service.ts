@@ -19,4 +19,9 @@ export class GeneratorService {
   create(form: any):Observable<any>{
     return this.http.post<any>(`${this.BASE_PATH}/generate-password`,form);
   }
+
+  delete(id: any):Observable<any>{
+    return this.http.delete<any>(`${this.BASE_PATH}/delete-password/${id}`);
+  }
+
 }

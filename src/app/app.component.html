@@ -47,6 +47,8 @@
       (searching)="search($event)"
       [loading]="loading"
       [first]="first"
+      [isDelete]="deleting"
+      (deleteItem)="deletePassword($event)"
       [totalRecords]="totalRecords"
       >
     </app-list>

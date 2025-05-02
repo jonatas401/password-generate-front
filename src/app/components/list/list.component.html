@@ -22,7 +22,25 @@
       <tr>
           <td>{{ item.password }}</td>
           <td>{{ item.createdDate }}</td>
-          <td></td>
+
+          <td class="justify-center">
+            <p-button
+            severity="danger"
+            [outlined]="true"
+            *ngIf="!isDelete || item.id != idDelete"
+            (click)="visible = !visible; idDelete = item.id"
+              icon="pi pi-trash" rounded="true" text="true" />
+            <p-inputIcon class="margin-bottom" *ngIf="isDelete && item.id == idDelete" styleClass="pi pi-spinner pi-spin" />
+
+            <p-dialog header="Atenção" [modal]="true" [(visible)]="visible" [style]="{ width: '25rem' }">
+              {{ idDelete }}
+              <span class="p-text-secondary block mb-8">Você realmente deseja deletar esta senha ?</span>
+              <div class="justify-space-around margin-top-1em">
+                <p-button label="Cancel" severity="secondary" (click)="visible = false" />
+                  <p-button (click)="delete(idDelete)" label="Sim" severity="danger" />
+              </div>
+          </p-dialog>
+          </td>
       </tr>
 
   </ng-template>

@@ -36,6 +36,7 @@ export class AppComponent {
   items:any = []
   totalRecords: number = 0;
   creating = false
+  deleting = false
 
   generatePasswordForm = {
     numbers: false,
@@ -107,6 +108,24 @@ export class AppComponent {
         }else{
           this.messageService.add({ severity: 'error', summary: 'Negado', detail: 'Erro ao tentar gerar senha !',life: 3000, });
         }
+      }
+
+    });
+
+  }
+
+  deletePassword(id: any){
+    this.deleting = true
+    this.generatorService.delete(id).subscribe({
+      next: (res: any) => {
+        this.messageService.add({ severity: 'info', summary: 'Confirmado', detail: 'Senha deletada com sucesso!',life: 3000, });
+        this.deleting = false
+        this.getAll();
+      },
+      error: (err: any) => {
+        this.deleting = false
+        this.messageService.add({ severity: 'error', summary: 'Negado', detail: 'Erro ao tentar deletar senha !',life: 3000, });
+
       }
 
     });

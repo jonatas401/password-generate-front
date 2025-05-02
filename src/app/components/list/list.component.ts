@@ -13,7 +13,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-list',
   imports: [TableModule, CommonModule, PaginatorModule,ButtonModule, InputTextModule,
-    InputIconModule,DatePicker,FormsModule],
+    InputIconModule,DatePicker,FormsModule,Dialog],
   templateUrl: './list.component.html',
   styleUrl: './list.component.css'
 })
@@ -22,6 +22,7 @@ export class ListComponent {
   filters: any = new Map();
   arr:any[] = []
   idDelete: String = "";
+  visible = false
   @Input() isDelete = false;
   @Input() loading: boolean = true;
   @Input() totalRecords = 19
@@ -31,6 +32,7 @@ export class ListComponent {
   @Output() open = new EventEmitter<void>();
   @Output() searching = new EventEmitter<String>();
   @Output() pageEventEmiter = new EventEmitter();
+  @Output() deleteItem = new EventEmitter<string>();
 
 
   ngOnInit(): void {
@@ -56,5 +58,11 @@ export class ListComponent {
   refresh(){
     this.date = undefined
     this.list()
+  }
+
+  delete(value: any) {
+    this.idDelete = value
+    this.visible = false
+    this.deleteItem.emit(value);
   }
 }
