@@ -1,19 +1,19 @@
 <p-table #dt1 [value]="items"
 [loading]="loading"
-[scrollable]="true" scrollHeight="500px"
+[scrollable]="true" scrollHeight="500px" [styleClass]="'overflow:visible'"
 >
   <ng-template  #header>
       <tr>
         <th>senha</th>
         <th>data de criação</th>
         <th><p-button (onClick)="refresh()" icon="pi pi-replay" variant="text" [raised]="true"
-          severity="info" size="large" showIcon iconDisplay="input"/></th>
+          severity="info" size="large" /></th>
       </tr>
       <tr>
         <th>
         </th>
         <th>
-          <p-datepicker size="small" (onSelect)="search(date, 'createdDate')" [(ngModel)]="date" />
+          <p-datepicker size="small" [showIcon]="true" iconDisplay="input" appendTo="body" (onSelect)="search(date, 'createdDate')" [(ngModel)]="date" />
         </th>
         <th></th>
     </tr>
