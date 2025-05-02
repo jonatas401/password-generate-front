@@ -7,7 +7,7 @@
             <form [formGroup]="form">
               <div class="margin-bottom-10px ">
                 <p-checkbox  formControlName="numbers" inputId="numbers"  [binary]="true" [(ngModel)]="generatePasswordForm.numbers" />
-                <label for="numbers" class="ml-2"> Numerico </label>
+                <label for="numbers" class="ml-2"> Números </label>
               </div>
               <div class="margin-bottom-10px">
                 <p-checkbox formControlName="specialCharacter" [binary]="true" inputId="specialCharacter" [(ngModel)]="generatePasswordForm.specialCharacter" />
@@ -15,7 +15,7 @@
               </div>
               <div class="margin-bottom-10px">
                 <p-checkbox  formControlName="isUpper" [binary]="true" inputId="isUpper" [(ngModel)]="generatePasswordForm.isUpper" />
-                <label for="isUpper" class="ml-2"> Letras maiaúsculas </label>
+                <label for="isUpper" class="ml-2"> Letras maiúsculas </label>
               </div>
               <div class="margin-bottom-10px">
                 <p-checkbox formControlName="isLower" [binary]="true" inputId="isLower" [(ngModel)]="generatePasswordForm.isLower" />
