@@ -33,7 +33,6 @@
             <p-inputIcon class="margin-bottom" *ngIf="isDelete && item.id == idDelete" styleClass="pi pi-spinner pi-spin" />
 
             <p-dialog header="Atenção" [modal]="true" [(visible)]="visible" [style]="{ width: '25rem' }">
-              {{ idDelete }}
               <span class="p-text-secondary block mb-8">Você realmente deseja deletar esta senha ?</span>
               <div class="justify-space-around margin-top-1em">
                 <p-button label="Cancel" severity="secondary" (click)="visible = false" />
