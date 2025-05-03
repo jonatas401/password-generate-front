@@ -34,7 +34,7 @@ git clone https://github.com/jonatas401/password-generate-front.git
 Após clonar o projeto rode o comando:
 
 ```bash
-nmp install
+npm install
 ```
 
 
